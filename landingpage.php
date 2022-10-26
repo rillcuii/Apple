@@ -118,13 +118,12 @@
         <use class="wave2" x="-100%" href="#sineWave" />
       </svg>
     </div>
+       <!-- Value Product -->
     <div>
       <div class="container items-center w-[1200px] mx-auto text-center pt-10 px-3">
-
         <span class="text-[#000000] font-semibold text-4xl">
           <i class="fa fa-apple fa-lg" aria-hidden="true"></i>iPhone 13 Pro
         </span>
-
         <p class="text-[#000000] font-bold text-[50px] py-1">
           <span class="tracking-tight">Ponsel. Paling. Pro.</span>
         </p>
@@ -133,9 +132,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Image Product -->
     <div class="container items-center mx-auto mt-10 w-[1200px] px-3 sticky -z-50" data-aos="fade-up" data-aos-duration="2000">
       <img src="https://cdn.eraspace.com/pub/media/wysiwyg/iphone-13-pro/iphone-13-pro-update-2022/Product.png" alt="">
     </div>
-
 </body>
 </html>
