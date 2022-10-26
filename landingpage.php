@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <script src="https://kit.fontawesome.com/874d28bdf2.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/1021789723687133235/1023475250693939250/applelogogrey.png">
-  <title>Apple Store</title>
-  <style type="text/css">
-      .wave {
-        animation: wave 8s linear infinite;
-      }
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+      <script src="https://kit.fontawesome.com/874d28bdf2.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <link rel="icon" href="https://cdn.discordapp.com/attachments/1021789723687133235/1023475250693939250/applelogogrey.png">
+      <title>Apple Store</title>
+      <style type="text/css">
+          .wave {
+            animation: wave 8s linear infinite;
+          }
 
-      .wave1 {
-        animation: wave1 10s linear infinite;
-      }
+          .wave1 {
+            animation: wave1 10s linear infinite;
+          }
 
-      .wave2 {
-        animation: wave2 12s linear infinite;
-      }
+          .wave2 {
+            animation: wave2 12s linear infinite;
+          }
 
-      @keyframes wave {
-        0% {
-          transform: translateX(0%);
-        }
+          @keyframes wave {
+            0% {
+              transform: translateX(0%);
+            }
 
-        100% {
-          transform: translateX(100%);
-        }
-      }
+            100% {
+              transform: translateX(100%);
+            }
+          }
 
-      @keyframes wave1 {
-        0% {
-          transform: scaleY(1.2) translateX(0%);
-        }
+          @keyframes wave1 {
+            0% {
+              transform: scaleY(1.2) translateX(0%);
+            }
 
-        100% {
-          transform: scaleY(1.2) translateX(100%);
-        }
-      }
+            100% {
+              transform: scaleY(1.2) translateX(100%);
+            }
+          }
 
-      @keyframes wave2 {
-        0% {
-          transform: scaleY(.8) translateX(0%);
-        }
+          @keyframes wave2 {
+            0% {
+              transform: scaleY(.8) translateX(0%);
+            }
 
-        100% {
-          transform: scaleY(.8) translateX(100%);
-        }
-      }
-    </style>
+            100% {
+              transform: scaleY(.8) translateX(100%);
+            }
+          }
+        </style>
 </head>
 <body class="bg-[#ffffff]">
 
@@ -118,5 +118,68 @@
         <use class="wave2" x="-100%" href="#sineWave" />
       </svg>
     </div>
+    
+    <!-- Carousel -->
+    <div class="mx-auto mt-6 relative container -z-50" data-aos="fade-up" data-aos-duration="2000">
+      <div class="swiper lg:h-auto lg:w-3/4">
+      <!-- Additional  required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img class="object-center object-cover w-full" src="https://cdn.discordapp.com/attachments/1021789723687133235/1024110871783415868/unknown.png" alt=""></div>
+        <div class="swiper-slide"><img class="object-center object-cover w-full" src="https://cdn.discordapp.com/attachments/1021789723687133235/1024111236490723409/unknown.png" alt=""></div>
+        <div class="swiper-slide"><img class="object-center object-cover w-full" src="https://cdn.discordapp.com/attachments/1021789723687133235/1024112043386732655/unknown.png" alt=""></div>
+      </div>
+      </div>
+    </div>
 </body>
+    
+ <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      speed:400,
+      spaceBetween:100,
+      effect: "fade",
+      loop: true,
+      autoplay:{
+        effect: "fade",
+        delay:5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+
+      }
+    });
+
+      let intro = document.querySelector('.intro');
+        let logo = document.querySelector('.logo-header');
+        let logoSpan = document.querySelectorAll('.logo');
+
+        window.addEventListener('DOMContentLoaded', ()=> {
+            setTimeout(()=> {
+                logoSpan.forEach((span, idx)=> {
+                    setTimeout(()=>{
+                        span.classList.add('active');
+                    }, (idx + 1) * 400)
+                });
+
+                setTimeout(()=>{
+                    logoSpan.forEach((span, idx)=>{
+                        setTimeout(()=>{
+                            span.classList.remove('active');
+                            span.classList.add('fade');
+                        }, (idx + 1) * 50)
+                    })
+                },3000);
+                setTimeout(()=>{
+                    intro.style.top = '-100vh';
+                }, 3400)
+            })
+        })
+    </script>
+
+    <script>
+      AOS.init();
+    </script>
 </html>
